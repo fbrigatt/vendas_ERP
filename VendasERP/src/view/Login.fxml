@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="167.0" prefWidth="319.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller_view.LoginController">
+    <stylesheets>
+        <URL value="@/css/login.css" />
+    </stylesheets>
+   <children>
+      <TextField fx:id="txtLogin" layoutX="13.0" layoutY="45.0" prefHeight="30.0" prefWidth="294.0" promptText="Login" text="Marcos Vinicius" />
+      <PasswordField fx:id="txtSenha" layoutX="13.0" layoutY="85.0" prefHeight="30.0" prefWidth="294.0" promptText="Senha" text="1234" />
+      <Button fx:id="btnLogin" layoutX="90.0" layoutY="124.0" mnemonicParsing="false" onAction="#Login" prefHeight="30.0" prefWidth="64.0" text="Login">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblMensagem" alignment="CENTER" layoutX="14.0" layoutY="21.0" prefHeight="17.0" prefWidth="294.0" textFill="#f50303" />
+      <Button fx:id="btnSair" layoutX="165.0" layoutY="124.0" mnemonicParsing="false" onAction="#Sair" prefHeight="30.0" prefWidth="64.0" text="Sair">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblStatusConexao" layoutX="13.0" layoutY="6.0" text="Label" />
+   </children>
+</AnchorPane>

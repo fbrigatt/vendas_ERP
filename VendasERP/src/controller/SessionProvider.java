@@ -31,7 +31,7 @@ public class SessionProvider
             dbConfig.setHost("localhost");
             dbConfig.setPort(3306);
             dbConfig.setUser("root");
-            dbConfig.setPassword("hp48gx");
+            dbConfig.setPassword("91198811");
             dbConfig.setPersistenceLogger(Logger.class);
             return sf.getSession(dbConfig);
         } catch (Exception erro)

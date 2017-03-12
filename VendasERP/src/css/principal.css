@@ -1,0 +1,22 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+#barraStatus {
+   /* -fx-background-color: cyan; */
+    -fx-background-color:  linear-gradient(lightgray, gray);
+  /*  -fx-padding: 15; */
+  /*  -fx-spacing: 1; */
+}
+
+.label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+

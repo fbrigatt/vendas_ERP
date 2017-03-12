@@ -41,7 +41,8 @@ public abstract class RepositoryImpl <T> implements IRepository <T>
     @Override
     public Session getSession()
     {
-       return mainSession;
+        checkInitialization();
+        return mainSession;
     }
 
     @Override
@@ -72,7 +73,9 @@ public abstract class RepositoryImpl <T> implements IRepository <T>
     public T find(Class entityClass, int id)
     {
         checkInitialization();
-        return mainSession.onID(entityClass, id);
+        T Entity = mainSession.onID(entityClass, id);
+        if(autoCommit) close();
+        return Entity;
     }
 
     @Override
@@ -86,15 +89,13 @@ public abstract class RepositoryImpl <T> implements IRepository <T>
     @Override
     public void commit(boolean close)
     {
-        checkInitialization();
         mainSession.commit();
-        close();
+        if(close) close();
     }
 
     @Override
     public void close()
     {
-        checkInitialization();
         mainSession.close();
     }
 
@@ -109,5 +110,4 @@ public abstract class RepositoryImpl <T> implements IRepository <T>
         checkInitialization();
         return mainSession.createCriteria(o, rt);
     }
-    
 }

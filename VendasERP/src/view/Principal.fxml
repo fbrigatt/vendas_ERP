@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller_view.PrincipalController">
+    <stylesheets>
+        <URL value="@/css/principal.css" />
+    </stylesheets>
+   <children>
+      <BorderPane layoutX="14.0" layoutY="35.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <ImageView fx:id="imgLogo" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="/imagens/logo.png" />
+               </image></ImageView>
+         </center>
+         <top>
+            <MenuBar id="mnuEstoque" prefHeight="25.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <menus>
+                  <Menu id="mnuCad" mnemonicParsing="false" text="Cadastro">
+                     <items>
+                        <MenuItem id="menuItemUsuarios" fx:id="miUsuarios" mnemonicParsing="false" onAction="#onClickUsuarios" text="Usuários" />
+                        <MenuItem id="menuItemClientes" fx:id="miClientes" mnemonicParsing="false" onAction="#onClickClientes" text="Clientes" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Edit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </top>
+         <bottom>
+            <HBox fx:id="barraStatus" prefHeight="17.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="lblDataCompleta" text="Label" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets left="5.0" right="100.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Label fx:id="lblUsuarioLogado" text="Label" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets right="150.0" />
+                     </padding>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Label fx:id="lblDataValidade" text="Label" HBox.hgrow="ALWAYS">
+                     <padding>
+                        <Insets right="80.0" />
+                     </padding>
+                  </Label>
+                  <Separator orientation="VERTICAL" prefHeight="200.0" />
+                  <Label fx:id="lblVersao" text="Label" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

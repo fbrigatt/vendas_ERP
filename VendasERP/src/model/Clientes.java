@@ -34,7 +34,9 @@ public class Clientes extends Entity
    private String bairro; 
    private int numero; 
    private String cep; 
-   private String uf; 
+   private String uf;
+   private String cpf;
+   private String rg;
 
    public void setId(int id)
    {
@@ -156,4 +158,21 @@ public class Clientes extends Entity
    {
        return uf;
    }
+   
+       public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+
 }

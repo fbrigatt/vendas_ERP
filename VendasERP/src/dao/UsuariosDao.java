@@ -15,7 +15,7 @@ import repository.UsuariosRepository;
  */
 public class UsuariosDao
 {
-
+    public static Usuarios logado;
     private UsuariosRepository db;
 
     public UsuariosDao(boolean... autoCommit)
@@ -47,6 +47,10 @@ public class UsuariosDao
     
     public void commit(){
         db.commit(true);
+    }
+    
+    public boolean verificaLogin(String nome, String senha){
+       return db.login(nome, senha);
     }
 
 }

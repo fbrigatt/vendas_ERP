@@ -19,6 +19,10 @@ public class Logger implements IPersistenceLogger
     public void newNofication(PersistenceLog pl)
     {
         System.out.println("Erro!");        
+        System.out.println("Classe: " + pl.getClassName());
+        System.out.println("Método: " + pl.getMethodName());
+        System.out.println("Query: "  + pl.getQuery());
+        System.out.println("Descrição: "  + pl.getDescription());
     }
     
 }

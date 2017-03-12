@@ -10,6 +10,8 @@ import br.com.persistor.enums.MATCH_MODE;
 import br.com.persistor.enums.RESULT_TYPE;
 import br.com.persistor.generalClasses.Restrictions;
 import br.com.persistor.interfaces.ICriteria;
+import br.com.persistor.sessionManager.Query;
+import dao.UsuariosDao;
 import java.util.List;
 import model.Usuarios;
 
@@ -25,5 +27,22 @@ public class UsuariosRepository extends RepositoryImpl<Usuarios>
         c.add(Restrictions.like(FILTER_TYPE.WHERE, "nome", nome, MATCH_MODE.ANYWHERE));
         c.execute();
         return usuarios.toList();
+    }
+    
+    public boolean login(String nome, String senha){
+        Usuarios usuarios = new Usuarios();
+        Query query = getSession().createQuery(usuarios, "SELECT * from usuarios WHERE nome = ? and senha = ?");
+        query.setParameter(1, nome);
+        query.setParameter(2, senha);
+        query.setResult_type(RESULT_TYPE.UNIQUE);
+        query.execute();
+        if (usuarios.getNome() == null) return false;
+        boolean logado = (usuarios.getNome().equals(nome) && usuarios.getSenha().equals(senha));
+        if (logado){
+            UsuariosDao.logado = usuarios;
+            return true;
+        }
+        return false;
+        //return usuarios.toList().size() > 0;
     }
 }
